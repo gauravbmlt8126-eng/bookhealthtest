@@ -1,0 +1,101 @@
+/* =============================================
+   ACTIVITIES SECTION — Minimalist Summary Redesign
+   ============================================= */
+
+.act-section {
+  background-color: var(--color-bg-warm, #faf8f5);
+  border-bottom: 1px solid var(--border-light, #e8e3d9);
+  padding: 6rem 0;
+  width: 100%;
+}
+
+.act-container {
+  max-width: var(--container-max-wide, 1800px);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.act-split-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.act-image-pane {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.act-main-image {
+  transition: transform 0.6s ease;
+}
+
+.act-image-pane:hover .act-main-image {
+  transform: scale(1.03);
+}
+
+.act-info-pane {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.act-eyebrow {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--primary-gold, #C8AE86);
+  margin-bottom: 0.75rem;
+}
+
+.act-heading {
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  font-weight: 300;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--primary-green, #1E3D2F);
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.act-heading em {
+  font-style: italic;
+  color: var(--primary-gold, #C8AE86);
+  font-weight: 300;
+}
+
+.act-body {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-body, #55524c);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.act-action-btn {
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .act-split-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .act-section {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .act-action-btn .btn {
+    width: 100%;
+  }
+}

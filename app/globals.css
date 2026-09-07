@@ -1,0 +1,650 @@
+@import "tailwindcss";
+@source "../features/**/*.jsx";
+@source "../features/**/*.js";
+@source "../components/**/*.jsx";
+@source "../components/**/*.js";
+@source "./**/*.jsx";
+@source "./**/*.js";
+
+:root {
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+
+  --font-size-h1: clamp(2.5rem, 5vw, 4.5rem);
+  --font-size-body-reg: clamp(0.875rem, 1vw, 1.05rem);
+  --font-size-small: clamp(0.75rem, 0.8vw, 0.85rem);
+
+  --line-height-heading: 1.1;
+  --line-height-body: 1.6;
+
+  --letter-spacing-heading: -1.5px;
+  --letter-spacing-label: 2px;
+
+  --color-primary: #F16055;
+  --color-primary-dark: #F16055;
+  --color-accent: block;
+  --color-accent-dark: #b0936b;
+  --color-accent-light: #f3edd8;
+  --color-dark: black;
+  --color-dark-alt: #5a6358;
+  --color-light: #ffffff;
+  --color-bg-warm: #faf8f5;
+  --color-bg-light: #ffffff;
+  --color-bg-alt: #f3f0ea;
+  --color-border: #e6e2da;
+  --glass-bg: rgba(255, 255, 255, 0.75);
+
+  /* Variables added from Corbett source project */
+  --font-serif: Georgia, serif;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Times New Roman', Times, serif;
+  --bg-color: #FAF8F4;
+  --text-dark: #2A211B;
+  --text-muted: #77736c;
+  --text-body: #55524c;
+  --primary-green: #1E3D2F;
+  --primary-gold: #C8AE86;
+  --primary-gold-dark: #A88E68;
+  --logo-bg: #F4F1EA;
+  --surface-white: #ffffff;
+  --surface-cream: #faf9f6;
+  --surface-dark: #0f0d0a;
+  --border-light: #e8e3d9;
+  --border-gold: rgba(255, 231, 169, 0.567);
+  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.2);
+  --shadow-gold: 0 4px 15px rgba(200, 174, 134, 0.3);
+
+  --border-radius: 4px;
+  --transition-base: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  /* Containers */
+  --container-max-width: 1280px;
+  --container-max-wide: 1800px;
+  --container-padding: clamp(1.25rem, 5vw, 6.5rem);
+
+  /* Centralized rules variables */
+  --color-dark-green-bg: #0c1110;
+  --color-offwhite-text: #fdfbf7;
+  --color-hero-bg: #fcfbfa;
+  --color-pure-black: #000000;
+  --color-overlay-black: rgba(10, 14, 13, 0.92);
+}
+
+.unified-container {
+  width: 100% !important;
+  max-width: var(--container-max-wide, 1800px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--container-padding) !important;
+  padding-right: var(--container-padding) !important;
+  box-sizing: border-box !important;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 77, 46, 0.5) var(--color-light);
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  color: var(--color-dark);
+  background-color: var(--color-bg-warm);
+  line-height: var(--line-height-body);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f06755b7;
+  border-radius: 6px;
+  transition: var(--transition-base);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 77, 46, 0.85);
+}
+
+html.menu-open,
+html.menu-open body {
+  overflow: hidden !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+}
+
+h1,
+.hero-title {
+  font-family: var(--font-playfair), "Playfair Display", serif;
+}
+
+h1,
+.h1 {
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+p {
+  font-size: 0.8rem;
+  line-height: var(--line-height-body);
+}
+
+/* --- ULTRA-WIDE SCREEN RESPONSIVENESS ( > 1400px ) --- */
+@media (min-width: 1400px) {
+  :root {
+    /* Scale up base fonts slightly so it doesn't look tiny on 4K */
+    --font-size-body-reg: clamp(1.05rem, 1.2vw, 1.25rem);
+    --font-size-small: clamp(0.85rem, 0.9vw, 1rem);
+
+    /* Scale up spaces */
+    --space-md: 32px;
+    --space-lg: 48px;
+    --space-xl: 64px;
+    --space-2xl: 96px;
+    --space-3xl: 128px;
+  }
+
+  body {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 1.05rem;
+  }
+}
+
+@media (min-width: 1800px) {
+  :root {
+    --font-size-body-reg: clamp(1.15rem, 1.3vw, 1.4rem);
+    --font-size-small: clamp(0.95rem, 1vw, 1.1rem);
+  }
+
+  body {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 1.15rem;
+  }
+}
+
+/* ==========================================================================
+   UNIFIED SECTION PADDING & MARGINS
+   ========================================================================== */
+.about-section,
+.rs-section,
+.dining-section,
+.amenities-section,
+.gallery-section,
+.places-section,
+.contact-details-section {
+  padding-top: clamp(3.5rem, 8vw, 7rem) !important;
+  padding-bottom: clamp(3.5rem, 8vw, 7rem) !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Ensure no extra padding-bottom in RoomsShowcase sub-elements */
+.rs-section-end {
+  padding-bottom: 0 !important;
+}
+
+/* ActivitiesSection handles its own spacing internally */
+
+/* Remove border-radius from all images, image wrappers, and cards containing images across the site */
+img,
+[class*="img-wrapper"],
+[class*="image-wrapper"],
+[class*="img-container"],
+[class*="image-container"],
+[class*="img-box"],
+[class*="image-box"],
+[class*="image-pane"],
+[class*="thumb-wrapper"],
+[class*="thumb"],
+.place-card,
+.place-image-wrapper,
+.about-img-box,
+.about-dedication-img-wrapper,
+.mission-card-img-wrapper,
+.dining-menu-img-wrapper,
+.room-card-image-pane,
+.room-card-float-img,
+.room-card-thumb-wrapper,
+.room-card-thumb,
+.gallery-grid-item,
+.gallery-grid-img-container,
+.gallery-img-wrapper,
+.room-detail-card {
+  border-radius: 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* home page showing blog section start code */
+
+.home-blog-section {
+  width: 100%;
+  padding: 0px 0px 70px 0px;
+  background: #faf9f6;
+}
+
+.home-blog-container {
+  width: min(1600px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+.home-blog-header {
+  max-width: 750px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.home-blog-header h2 {
+  margin: 0 0 15px;
+  color: #234f3d;
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(38px, 4vw, 60px);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.home-blog-header p {
+  margin: 0;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.home-blog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.home-blog-card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e5e0d8;
+}
+
+.home-blog-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 0.72;
+  overflow: hidden;
+}
+
+.home-blog-image img {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.home-blog-card:hover .home-blog-image img {
+  transform: scale(1.04);
+}
+
+.home-blog-content {
+  padding: 22px 20px 25px;
+}
+
+.home-blog-subtitle {
+  display: block;
+  margin-bottom: 9px;
+  color: #a88e68;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.home-blog-content h3 {
+  margin: 0 0 10px;
+  color: #2a211b;
+  font-family: var(--font-cormorant), serif;
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.home-blog-content p {
+  margin: 0 0 18px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.home-blog-content a {
+  display: inline-block;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #c8ae86;
+  color: #a88e68;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+/* MD - 3 columns */
+@media (max-width: 1199px) {
+  .home-blog-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+
+/* SM - 2 columns */
+@media (max-width: 767px) {
+  .home-blog-section {
+    padding: 70px 0;
+  }
+
+  .home-blog-container {
+    width: min(100% - 40px, 700px);
+  }
+
+  .home-blog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .home-blog-content {
+    padding: 18px 15px 20px;
+  }
+
+  .home-blog-content h3 {
+    font-size: 23px;
+  }
+}
+
+
+/* Mobile - 1 column */
+@media (max-width: 575px) {
+  .home-blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-blog-header {
+    margin-bottom: 35px;
+  }
+
+  .home-blog-content h3 {
+    font-size: 26px;
+  }
+}
+
+/* home page showing blog section end code */
+
+
+
+/* 
+
+
+
+
+.partner-slider {
+  width: 100%;
+}
+
+.partner-slider .slick-list {
+  overflow: hidden;
+}
+
+.partner-slider .slick-track {
+  display: flex;
+  align-items: stretch;
+}
+
+.partner-slider .slick-slide {
+  height: auto;
+}
+
+.partner-slider .slick-slide>div {
+  height: 100%;
+}
+
+.partner-slider .slick-prev,
+.partner-slider .slick-next {
+  z-index: 10;
+}
+
+.partner-slider .slick-prev {
+  left: -28px;
+}
+
+.partner-slider .slick-next {
+  right: -28px;
+}
+
+.partner-slider .slick-prev:before,
+.partner-slider .slick-next:before {
+  color: #205541;
+  font-size: 22px;
+}
+
+.partner-slider .slick-dots {
+  bottom: -38px;
+}
+
+.partner-slider .slick-dots li button:before {
+  color: #205541;
+  font-size: 8px;
+  opacity: 0.35;
+}
+
+.partner-slider .slick-dots li.slick-active button:before {
+  color: #205541;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .partner-slider .slick-prev {
+    left: -15px;
+  }
+
+  .partner-slider .slick-next {
+    right: -15px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .partner-slider .slick-prev,
+  .partner-slider .slick-next {
+    display: none !important;
+  }
+} */
+
+
+
+.partner-slider {
+  width: 100%;
+}
+
+.partner-slider .slick-list {
+  overflow: hidden;
+  padding: 8px 0 15px;
+}
+
+.partner-slider .slick-track {
+  display: flex;
+  align-items: center;
+}
+
+.partner-slider .slick-slide {
+  height: auto;
+}
+
+.partner-slider .slick-slide>div {
+  height: 100%;
+}
+
+.partner-slider .slick-prev,
+.partner-slider .slick-next {
+  z-index: 10;
+}
+
+.partner-slider .slick-prev {
+  left: -30px;
+}
+
+.partner-slider .slick-next {
+  right: -30px;
+}
+
+.partner-slider .slick-prev:before,
+.partner-slider .slick-next:before {
+  color: #205541;
+  font-size: 22px;
+}
+
+@media (max-width: 768px) {
+  .partner-slider .slick-prev {
+    left: -15px;
+  }
+
+  .partner-slider .slick-next {
+    right: -15px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .partner-slider .slick-prev,
+  .partner-slider .slick-next {
+    display: none !important;
+  }
+
+  .small {
+    font-size: 30px !important;
+    padding: 0px 10px;
+  }
+}
+
+/* 
+.event-image-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 310px;
+  height: 440px;
+}
+
+.event-image-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+ 
+@media (max-width: 767px) {
+  .event-image-wrap {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 5 / 6;
+  }
+
+  .event-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+} */
+
+
+
+.event-image-wrap {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.event-image-wrap img {
+  width: 100%;
+  height: auto !important;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .event-image-wrap {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .event-image-wrap img {
+    width: 100%;
+    height: auto !important;
+    object-fit: contain;
+  }
+}
