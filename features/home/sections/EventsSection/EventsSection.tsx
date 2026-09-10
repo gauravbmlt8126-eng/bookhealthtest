@@ -17,7 +17,7 @@ const eventTypes = [
   },
   {
     id: "Executive Full Body Health Checkupp",
-    title: "Executive Full Body Health Checkupp",
+    title: "Executive Full Body Health Checkup",
     description:
       "CAP, NABL, ISO 9001 CAP, NABL, ISO 9001 FREE Home Sample Pickup FREE Home Sample Pickup Online Report Delivery Online Report Delivery",
     image: "/assets/images/gallery/2.png",
