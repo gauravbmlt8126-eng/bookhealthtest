@@ -65,12 +65,12 @@ export default function Navbar({ onMenuOpen }: NavbarProps) {
           <span id="weather-text">{weatherText}</span>
         </div>
       </div>
-
+     
 
       <Link href="/" className="logo">
         <Image
           src="/assets/images/logo.webp"
-          alt="Corbett Treat Resort Logo"
+          alt="logo"
           width={400}
           height={150}
           priority
@@ -80,6 +80,18 @@ export default function Navbar({ onMenuOpen }: NavbarProps) {
         />
       </Link>
 
+      <Link href="/" className="logo dd">
+        <Image
+          src="/assets/images/bookhealthtest.png"
+          alt=" logo"
+          width={400}
+          height={300}
+          priority
+          loading="eager"
+          style={{ width: "auto", height: "auto" }}
+          className="logo-img"
+        />
+      </Link>
       <div className="nav-right">
         <Button
           href={BOOK_NOW_URL}

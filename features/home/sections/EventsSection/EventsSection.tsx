@@ -116,8 +116,8 @@ const eventTypes = [
     test: "103 Tests",
   },
   {
-    id: "Aarogyam Male - 2026 Premium",
-    title: "Aarogyam Male - 2026",
+    id: "Aarogyam female - 2026 Premium",
+    title: "Aarogyam Female - 2026",
     description:
       "CAP, NABL, ISO 9001 CAP, NABL, ISO 9001 FREE Home Sample Pickup FREE Home Sample Pickup Online Report Delivery Online Report Delivery",
     image: "/assets/images/gallery/12.png",

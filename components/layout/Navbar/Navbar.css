@@ -18,7 +18,9 @@
   background: var(--color-light);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
-
+.dd{
+  margin-left: 20px;
+}
 
 .nav-left {
   order: 2;
@@ -108,6 +110,9 @@
   .navbar.scrolled .logo-img {
     height: 42px !important;
   }
+  .dd{
+  margin-left: 5px;
+}
 }
 
 
