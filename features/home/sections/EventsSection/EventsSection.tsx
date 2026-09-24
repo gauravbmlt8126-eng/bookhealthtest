@@ -21,7 +21,7 @@ const eventTypes = [
     description:
       "CAP, NABL, ISO 9001 CAP, NABL, ISO 9001 FREE Home Sample Pickup FREE Home Sample Pickup Online Report Delivery Online Report Delivery",
     image: "/assets/images/gallery/2.png",
-    price: "1745",
+    price: "1850",
     mrp: "6050",
     test: "127 Tests",
   },
